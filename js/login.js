@@ -8,5 +8,5 @@ function logar(){
         window.location.href = "request.html";
     }else{
         window.alert("Usuário ou senha inválida");
-    }  
-}
+    };
+};

@@ -1,25 +1,17 @@
-// Obtém o botão que abre o modal
-var btn = document.getElementById("myBtn");
+const openModalButton = document.querySelector("#open-modal");
+const openModalButton2 = document.querySelector("#open-modal2");
+const closeModalButton = document.querySelector("#close-modal");
+const modal = document.querySelector("#modal");
+const fade = document.querySelector("#fade");
 
-// Obtém o modal
-var modal = document.getElementById("myModal");
+const toggleModal = () => {
+  [modal,fade].forEach((el) => el.classList.toggle("hide"));
+};
 
-// Obtém o botão fechar
-var span = document.getElementsByClassName("close")[0];
+[openModalButton, openModalButton2, closeModalButton, fade].forEach((el) => {  
+  el.addEventListener("click", () => toggleModal());
 
-// Quando o usuário clicar no botão, abre o modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+}); 
 
-// Quando o usuário clicar no botão fechar, fecha o modal 
-span.onclick = function() {
-  modal.style.display = "none";
-}
 
-// Quando o usuário clicar fora do modal, fecha o modal 
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+  
